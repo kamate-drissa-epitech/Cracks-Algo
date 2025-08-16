@@ -46,4 +46,24 @@ def find_missing(arr):
     return newArr[-1] + 1
 
    
-print(find_missing([3, 7, 1, 2, 8, 4, 5]))
+
+def sum(arr : list):
+    
+    if len(arr) == 0:
+        return 0
+    return arr[0] + sum(arr[1:])
+
+
+def count(arr: list):
+    if len(arr) == 0:
+        return 0
+    return 1 + count(arr[1:])
+
+
+def find_maximum(arr : list):
+    if len(arr) == 2:
+        return arr[1] if arr[1] > arr[0] else arr[0]
+    sub_max = find_maximum(arr[1:])
+    return arr[0] if arr[0] > sub_max else sub_max
+
+print(find_maximum([1, 2, 3, 4]))
